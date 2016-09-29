@@ -53,7 +53,7 @@
                 var foundItems = [];
 
                 for (var i = 0, length = allItems.length; i < length; i++ ) {
-                    if (allItems[i].description.indexOf(searchTerm) !== -1) {
+                    if (allItems[i].description.toLowerCase().indexOf(searchTerm) !== -1) {
                         foundItems.push(allItems[i]);
                     }
                 }
