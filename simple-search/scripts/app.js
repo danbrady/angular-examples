@@ -30,16 +30,17 @@
             });
         };
 
-        ctrl.onRemove = function (index) {
-            ctrl.found.splice(index, 1);
+        ctrl.removeItem = function (index) {
+            // ctrl.found.splice(index, 1);
+            MenuSearchService.removeItem(index);
         };
-
     }
 
 
     MenuSearchService.$inject = ["$http"];
     function MenuSearchService($http) {
         var service = this;
+        var foundItems;    
 
         service.getMatchedMenuItems = function (searchTerm) {
 
@@ -50,7 +51,7 @@
 
                 // process result and only keep items that match
                 var allItems = result.data.menu_items;
-                var foundItems = [];
+                foundItems = [];
 
                 for (var i = 0, length = allItems.length; i < length; i++ ) {
                     if (allItems[i].description.toLowerCase().indexOf(searchTerm) !== -1) {
@@ -60,8 +61,11 @@
 
                 // return processed items
                 return foundItems;
-
             });
+        };
+
+        service.removeItem = function (itemIndex) {
+            foundItems.splice(itemIndex, 1);
         };
     }
 
