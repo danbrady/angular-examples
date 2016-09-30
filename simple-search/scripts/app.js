@@ -71,7 +71,7 @@
             templateUrl: "foundItemsList.html",
             restrict: "E",
             scope: {
-                foundItems: "<foundItems",
+                foundItems: "<",
                 onRemove: "&"
             },
             controller: FoundItemsDirectiveController,
