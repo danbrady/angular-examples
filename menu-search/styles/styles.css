@@ -1,0 +1,10 @@
+.btn-category {
+    margin-right: 6px;
+    margin-bottom: 6px;
+}
+
+.layout-columns-2 {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+}
