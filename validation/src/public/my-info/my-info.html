@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+
+        <div ng-if="!MyInfoCtrl.user" class="text-center">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                <h4>Not signed up yet. <a ui-sref="public.signup">Sign Up Now!</a></h4>
+            </div>
+        </div>
+
+        <div ng-if="MyInfoCtrl.user">
+
+            <div class="col-xs-12 col-sm-6">
+                <h3>My Info</h3>
+                <p>
+                    Name: <strong>{{ MyInfoCtrl.user.first }} {{ MyInfoCtrl.user.last }}</strong><br>
+                    Phone: <strong>{{ MyInfoCtrl.user.phone }}</strong><br>
+                    E-mail: <strong>{{ MyInfoCtrl.user.email }}<strong></strong>
+                </p>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <h3>Favorite Dish</h3>
+
+                <img class="img-responsive" width="250" height="150" ng-src="{{MyInfoCtrl.basePath}}/images/{{MyInfoCtrl.menuItem.short_name}}.jpg" alt="{{MyInfoCtrl.menuItem.name}}">
+                <p {{MyInfoCtrl.menuItem.short_name}} - {{MyInfoCtrl.menuItem.name}}</p>
+                <p><em>{{ MyInfoCtrl.menuItem.description }}</em></p>
+
+            </div>
+
+        </div>
+    </div>
+</div>
